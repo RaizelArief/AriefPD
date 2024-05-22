@@ -6,15 +6,45 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Register</h1>
-
-    <form id="registerForm">
-        <input type="text" id="username" placeholder="Enter username">
-        <input type="text" id="password" placeholder="Enter Password">
+   <div class="container">
+        <h1>Register :</h1>
+      <form id="registerForm">
+        <input
+          type="text"
+          class="username"
+          id="username"
+          placeholder="Enter username"
+        />
+        <br>
+        <input type="text" id="password" placeholder="Enter Password" />
+        <br>
         <button id="register-button" type="submit">Register</button>
-    </form>
+      </form>
+    </div>
 
-    <a href="login.html">Login Page</a>
     <script src="registerController.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 1px;
+        background-color: blueviolet;
+      }
+      h1 {
+        background-color: white;
+
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      .username {
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        display: grid;
+        place-items: center;
+        height: 10vh;
+      }
+    </style>
 </body>
 </html>
