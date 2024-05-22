@@ -9,10 +9,28 @@ document.getElementById("registerForm").addEventListener("submit", (event) => {
     localStorage.setItem("username", username.value)
     localStorage.setItem("password", password.value);
 
-    alert("Succes Register");
-    window.location.href = "login.html";
+    
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
+    let storedValid = false;
+    if (storedPassword == "" || storedUsername == "") {
+      localStorage.removeItem("username");
+      localStorage.removeItem("password");
+    } else {
+        storedValid = true;
+    }
 
-    console.log("user registered");
-    console.log(eachUsers);
-  };
+    
+    if (
+      username.value === storedUsername &&
+      password.value === storedPassword && storedValid
+    ) {
+      alert(`regis succes`);
+      window.location.href = "login.html";
+    } else {
+      alert("kamu gagal, silahkan coba lagi");
+    }
+    console.log("user registered")
+    console.log(eacUsers)
+  }
 });
